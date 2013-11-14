@@ -13,7 +13,7 @@ private WebView webView;
 		setContentView(R.layout.activity_main);
 		webView = (WebView) findViewById(R.id.webView);
 		webView.getSettings().setJavaScriptEnabled(true);
-		webView.loadUrl("http://www.yahoo.com");
+		webView.loadUrl("http://flights.elasticbeanstalk.com/index.html");
 	}
 
 	@Override
