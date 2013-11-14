@@ -1,0 +1,193 @@
+<html>
+<head><title>Flycheap</title>
+<script type="text/javascript">
+function validateForm()
+{
+	var dptFrom=document.forms["queryForm"]["departFrom"].value;
+	if (dptFrom==null || dptFrom=="")
+	{
+	  alert("Depart From must be filled out");
+	  return false;
+	}
+  
+	var dptTo=document.forms["queryForm"]["departTo"].value;
+	if (dptTo==null || dptTo=="")
+	{
+	  alert("Depart To must be filled out");
+	  return false;
+	}
+
+	var dptMonth=document.forms["queryForm"]["departMonth"].value;
+	if (dptMonth==null || dptMonth=="")
+	{
+		  alert("Month must be filled out");
+		  return false;
+	}
+
+    var dptYear=document.forms["queryForm"]["departYear"].value;
+	if (dptYear==null || dptYear=="")
+	{
+		  alert("Year must be filled out");
+		  return false;
+	}
+
+	if((parseInt(dptMonth) < 11) && (parseInt(dptYear) == 2013))
+	{
+		  alert("Incorrect Month");
+		  return false;
+	}
+	
+	return true;
+}
+  </script>
+</head>
+<body><h1> Welcome to Flycheap</h1>
+<form name="queryForm" action="getFlights.jsp" onsubmit="return validateForm()" method="post">
+<table>
+<tr><td>Depart From</td><td colspan="2">
+<select name="departFrom">
+  <option value="" selected>Select One</option>
+<option value="ATL">ATL-Georgia</option>
+<option value="ANC">ANC-Alaska</option>
+<option value="AUS">AUS-Texas</option>
+<option value="BWI">BWI-Maryland</option>
+<option value="BOS">BOS-Massachusetts</option>
+<option value="CLT">CLT-North Carolina</option>
+<option value="MDW">MDW-Illinois</option>
+<option value="ORD">ORD-Illinois</option>
+<option value="CVG">CVG-Ohio</option>
+<option value="CLE">CLE-Ohio</option>
+<option value="CMH">CMH-Ohio</option>
+<option value="DFW">DFW-Texas</option>
+<option value="DEN">DEN-Colorado</option>
+<option value="DTW">DTW-Michigan</option>
+<option value="FLL">FLL-Florida</option>
+<option value="RSW">RSW-Florida</option>
+<option value="BDL">BDL-Connecticut</option>
+<option value="HNL">HNL-Hawaii</option>
+<option value="IAH">IAH-Texas</option>
+<option value="HOU">HOU-Texas</option>
+<option value="IND">IND-Indiana</option>
+<option value="MCI">MCI-Missouri</option>
+<option value="LAS">LAS-Nevada</option>
+<option value="LAX">LAX-California</option>
+<option value="MEM">MEM-Tennessee</option>
+<option value="MIA">MIA-Florida</option>
+<option value="MSP">MSP-Minnesota</option>
+<option value="BNA">BNA-Tennessee</option>
+<option value="MSY">MSY-Louisiana</option>
+<option value="JFK">JFK-New York</option>
+<option value="LGA">LGA-New York</option>
+<option value="EWR">EWR-New Jersey</option>
+<option value="OAK">OAK-California</option>
+<option value="ONT">ONT-California</option>
+<option value="MCO">MCO-Florida</option>
+<option value="PHL">PHL-Pennsylvania</option>
+<option value="PHX">PHX-Arizona</option>
+<option value="PIT">PIT-Pennsylvania</option>
+<option value="PDX">PDX-Oregon</option>
+<option value="RDU">RDU-North Carolina</option>
+<option value="SMF">SMF-California</option>
+<option value="SLC">SLC-Utah</option>
+<option value="SAT">SAT-Texas</option>
+<option value="SAN">SAN-California</option>
+<option value="SFO">SFO-California</option>
+<option value="SJC">SJC-California</option>
+<option value="SNA">SNA-California</option>
+<option value="SEA">SEA-Washington</option>
+<option value="STL">STL-Missouri</option>
+<option value="TPA">TPA-Florida</option>
+<option value="IAD">IAD-Washington D.C.</option>
+<option value="DCA">DCA-Washington D.C.</option>
+</select> 
+</td>
+</tr>
+<tr><td>To Destination</td><td colspan="2">
+<select name="departTo">
+  <option value="" selected>Select One</option>
+<option value="ATL">ATL-Georgia</option>
+<option value="ANC">ANC-Alaska</option>
+<option value="AUS">AUS-Texas</option>
+<option value="BWI">BWI-Maryland</option>
+<option value="BOS">BOS-Massachusetts</option>
+<option value="CLT">CLT-North Carolina</option>
+<option value="MDW">MDW-Illinois</option>
+<option value="ORD">ORD-Illinois</option>
+<option value="CVG">CVG-Ohio</option>
+<option value="CLE">CLE-Ohio</option>
+<option value="CMH">CMH-Ohio</option>
+<option value="DFW">DFW-Texas</option>
+<option value="DEN">DEN-Colorado</option>
+<option value="DTW">DTW-Michigan</option>
+<option value="FLL">FLL-Florida</option>
+<option value="RSW">RSW-Florida</option>
+<option value="BDL">BDL-Connecticut</option>
+<option value="HNL">HNL-Hawaii</option>
+<option value="IAH">IAH-Texas</option>
+<option value="HOU">HOU-Texas</option>
+<option value="IND">IND-Indiana</option>
+<option value="MCI">MCI-Missouri</option>
+<option value="LAS">LAS-Nevada</option>
+<option value="LAX">LAX-California</option>
+<option value="MEM">MEM-Tennessee</option>
+<option value="MIA">MIA-Florida</option>
+<option value="MSP">MSP-Minnesota</option>
+<option value="BNA">BNA-Tennessee</option>
+<option value="MSY">MSY-Louisiana</option>
+<option value="JFK">JFK-New York</option>
+<option value="LGA">LGA-New York</option>
+<option value="EWR">EWR-New Jersey</option>
+<option value="OAK">OAK-California</option>
+<option value="ONT">ONT-California</option>
+<option value="MCO">MCO-Florida</option>
+<option value="PHL">PHL-Pennsylvania</option>
+<option value="PHX">PHX-Arizona</option>
+<option value="PIT">PIT-Pennsylvania</option>
+<option value="PDX">PDX-Oregon</option>
+<option value="RDU">RDU-North Carolina</option>
+<option value="SMF">SMF-California</option>
+<option value="SLC">SLC-Utah</option>
+<option value="SAT">SAT-Texas</option>
+<option value="SAN">SAN-California</option>
+<option value="SFO">SFO-California</option>
+<option value="SJC">SJC-California</option>
+<option value="SNA">SNA-California</option>
+<option value="SEA">SEA-Washington</option>
+<option value="STL">STL-Missouri</option>
+<option value="TPA">TPA-Florida</option>
+<option value="IAD">IAD-Washington D.C.</option>
+<option value="DCA">DCA-Washington D.C.</option>
+</select> 
+</td>
+</tr>
+<tr><td>Month of Travel</td>
+<td>
+<select name="departMonth">
+  <option value="" selected>Month</option>
+  <option value="01">1</option>
+  <option value="02">2</option>
+  <option value="03">3</option>
+  <option value="04">4</option>
+  <option value="05">5</option>
+  <option value="06">6</option>
+  <option value="07">7</option>
+  <option value="08">8</option>
+  <option value="09">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+</select> 
+</td>
+<td>
+<select name="departYear">
+  <option value="" selected>Year</option>
+  <option value="2013">2013</option>
+  <option value="2014">2014</option>
+</select> 
+</td>
+</tr>
+<tr><td colspan="3"><input type="Submit" value="Search"/> </td></tr>
+</table>
+</form>
+</body>
+</html>
